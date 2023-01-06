@@ -87,6 +87,7 @@ DATABASES = {
     }
 }
 
+LOGIN_REDIRECT_URL ='/'
 
 AUTH_USER_MODEL ='imgapi.User'
 # Password validation
