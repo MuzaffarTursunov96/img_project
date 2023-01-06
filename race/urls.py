@@ -28,7 +28,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('imgapi.urls')),
-    path('login/' , LoginView.as_view(template_name='login.html')),
+    path('accounts/login/' , LoginView.as_view(template_name='login.html')),
     
     path('swagger/', schema_view.with_ui('swagger',
                                          cache_timeout=0), name='schema-swagger-ui'),
