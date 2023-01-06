@@ -26,24 +26,16 @@
     {% endif %}
     <form>
       <!-- Email input -->
+      <div class="bold">Login</div>
       <div class="form-outline mb-4">
-        <input type="email" id="form2Example1" class="form-control" />
-        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="50" class="form-control"  required id="id_username"/>
+        <label class="form-label" for="id_username">Email address</label>
       </div>
     
       <!-- Password input -->
       <div class="form-outline mb-4">
-        <input type="password" id="form2Example2" class="form-control" />
-        <label class="form-label" for="form2Example2">Password</label>
-      </div>
-    
-      <div>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </div>
-      <div>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
+        <input type="password" id="id_password" name="password" required autocomplete="current-password" class="form-control" />
+        <label class="form-label" for="id_password">Password</label>
       </div>
       
     
