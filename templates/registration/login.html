@@ -24,8 +24,9 @@
         <p>Please login to see this page.</p>
         {% endif %}
     {% endif %}
-    <form>
+    <form method="POST" action="{% url 'login'%}">
       <!-- Email input -->
+      {%csrf_token%}
       <div class="bold">Login</div>
       <div class="form-outline mb-4">
         <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="50" class="form-control"  required id="id_username"/>
