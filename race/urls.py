@@ -11,7 +11,12 @@ from drf_yasg import openapi
 from django.contrib.auth.views import LoginView
 from . import views
 
-...
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -35,5 +40,8 @@ urlpatterns = [
                                          cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc',
                                        cache_timeout=0), name='schema-redoc'),
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
