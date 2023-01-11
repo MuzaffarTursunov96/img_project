@@ -22,6 +22,8 @@ import os
 # SECURITY WARNING: keep the secret key used in production secret!
 from decouple import config
 
+
+
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
